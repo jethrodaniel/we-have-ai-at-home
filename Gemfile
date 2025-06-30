@@ -11,7 +11,7 @@ gem "cssbundling-rails"
 gem "jbuilder"
 # gem "bcrypt", "~> 3.1.7"
 
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem "tzinfo-data", platforms: %i[windows jruby]
 
 gem "solid_cache"
 gem "solid_queue"
@@ -24,7 +24,7 @@ gem "thruster", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+  gem "debug", platforms: %i[mri windows], require: "debug/prelude"
   gem "brakeman", require: false
   gem "rubocop-lazy-config",
     github: "jethrodaniel/rubocop-lazy-config",
