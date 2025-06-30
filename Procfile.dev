@@ -1,2 +1,3 @@
 web: env RUBY_DEBUG_OPEN=true bin/rails server
 css: yarn watch:css
+llama: llama-server -hf ggml-org/Qwen3-1.7B-GGUF --port 8080

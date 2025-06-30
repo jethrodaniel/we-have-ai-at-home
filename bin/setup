@@ -14,14 +14,28 @@ FileUtils.chdir APP_ROOT do
 
   puts "== Installing dependencies =="
   system("bundle check") || system!("bundle install")
+  system("llama-server -h") || abort(<<~ERROR)
+    Missing `llama-server`!
+
+    Install like so:
+
+    Ubuntu:
+
+        sudo apt install -y git cmake libcurl4-openssl-dev ccache
+        git clone https://github.com/ggml-org/llama.cpp
+        cd llama.cpp
+        cmake -B build
+        cmake --build build --config Release
+        sudo ln -fvs $(realpath ./build/bin/llama-server) /usr/bin/llama-server
+
+    MacOS:
+
+        brew install llama.cpp
+
+  ERROR
 
   # Install JavaScript dependencies
   system("yarn install --check-files")
-
-  # puts "\n== Copying sample files =="
-  # unless File.exist?("config/database.yml")
-  #   FileUtils.cp "config/database.yml.sample", "config/database.yml"
-  # end
 
   puts "\n== Preparing database =="
   system! "bin/rails db:prepare"

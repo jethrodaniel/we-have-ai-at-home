@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Local AI chatbot using [llama.cpp](https://github.com/ggml-org/llama.cpp) and [Rails](https://rubyonrails.org/).
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+```
+bin/setup
+```
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Then visit http://localhost:3000 in your browser.
