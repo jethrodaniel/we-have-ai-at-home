@@ -57,6 +57,6 @@ class ChatsController < ApplicationController
   end
 
   def chat_params
-    params.expect(chat: [:model_id])
+    params.expect(chat: [:model_id]).merge(user: Current.user)
   end
 end

@@ -2,6 +2,8 @@
 
 one:
   model_id: MyString
+  user: one
 
 two:
   model_id: MyString
+  user: two
