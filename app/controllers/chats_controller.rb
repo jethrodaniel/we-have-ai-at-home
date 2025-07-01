@@ -1,0 +1,62 @@
+class ChatsController < ApplicationController
+  before_action :set_chat, only: %i[show edit update destroy]
+
+  def index
+    @chats = Chat.all # TODO: scope to user's chats
+  end
+
+  def show
+  end
+
+  def new
+    @chat = Chat.new
+  end
+
+  def edit
+  end
+
+  def create
+    @chat = Chat.new(chat_params)
+
+    respond_to do |format|
+      if @chat.save
+        format.html { redirect_to @chat, notice: "Chat was successfully created." }
+        format.json { render :show, status: :created, location: @chat }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @chat.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @chat.update(chat_params)
+        format.html { redirect_to @chat, notice: "Chat was successfully updated." }
+        format.json { render :show, status: :ok, location: @chat }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @chat.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @chat.destroy!
+
+    respond_to do |format|
+      format.html { redirect_to chats_path, status: :see_other, notice: "Chat was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+
+  def set_chat
+    @chat = Chat.find(params.expect(:id))
+  end
+
+  def chat_params
+    params.expect(chat: [:model_id])
+  end
+end
