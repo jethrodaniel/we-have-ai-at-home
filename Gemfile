@@ -1,5 +1,7 @@
 source "https://rubygems.org"
 
+ruby file: ".tool-versions"
+
 gem "rails"
 gem "propshaft"
 gem "sqlite3", ">= 2.1"
