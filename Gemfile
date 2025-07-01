@@ -43,4 +43,6 @@ group :test do
 end
 
 gem "ruby_llm"
-gem "sqlite_extensions-uuid"
+gem "sqlite_extensions-uuid",
+  github: "jethrodaniel/sqlite_extensions-uuid",
+  branch: "dev"

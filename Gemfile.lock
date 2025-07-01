@@ -12,6 +12,14 @@ GIT
       rubocop-rspec_rails (>= 2.31)
       standard (>= 1.47)
 
+GIT
+  remote: https://github.com/jethrodaniel/sqlite_extensions-uuid.git
+  revision: dd1cdd811b9c47307a8fd65f53d2bfcd6bb503c4
+  branch: dev
+  specs:
+    sqlite_extensions-uuid (1.0.1)
+      sqlite3 (>= 2.4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -370,8 +378,6 @@ GEM
     sqlite3 (2.7.1-x86_64-darwin)
     sqlite3 (2.7.1-x86_64-linux-gnu)
     sqlite3 (2.7.1-x86_64-linux-musl)
-    sqlite_extensions-uuid (1.0.1)
-      sqlite3 (>= 2.4.0)
     sshkit (1.24.0)
       base64
       logger
@@ -457,7 +463,7 @@ DEPENDENCIES
   solid_cache
   solid_queue
   sqlite3 (>= 2.1)
-  sqlite_extensions-uuid
+  sqlite_extensions-uuid!
   stimulus-rails
   thruster
   turbo-rails
