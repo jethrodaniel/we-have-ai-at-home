@@ -60,16 +60,28 @@
         </div>
       </nav>
 
-      <section class="p-2 d-flex flex-column">
-        <% 1.upto(20) do |index| %>
-          <% if index.odd?%>
-            <div class="border rounded p-3 m-3 w-50 align-self-end">
-              <%= "Question: #{index}" %>
+      <section class="p-2 d-flex flex-column flex-grow-1">
+        <% if Current.user.chats.count.zero? %>
+          <div class="text-center">Send a message to start</div>
+
+          <div class="border rounded p-3 m-3 w-50 align-self-center text-secondary">
+            <div class="fw-bold">Server info</div>
+            <div class="d-flex gap-1">
+              <div class="fw-bold">Model:</div>
+              <%= Current.model %>
             </div>
-          <% else %>
-            <div class="border rounded p-3 m-3 w-50 align-self-start">
-              <%= "Answer: #{index}" %>
-            </div>
+          </div>
+        <% else %>
+          <% 1.upto(20) do |index| %>
+            <% if index.odd?%>
+              <div class="border rounded p-3 m-3 w-50 align-self-end">
+                <%= "Question: #{index}" %>
+              </div>
+            <% else %>
+              <div class="border rounded p-3 m-3 w-50 align-self-start">
+                <%= "Answer: #{index}" %>
+              </div>
+            <% end %>
           <% end %>
         <% end %>
       </section>
