@@ -23,53 +23,61 @@
   </head>
 
   <body class="min-vh-100 d-flex flex-column">
-    <nav class="border px-2 py-4 sticky-top bg-body d-flex justify-content-between">
-      <div class="w-100 d-flex justify-content-between gap-4">
-        <button class="btn border rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
-          <%= image_tag "list.svg", class: "w-100 h-100" %>
-        </button>
-
-        <div class="w-100 d-flex justify-content-start">
-          <h1>chat</h1>
-        </div>
-      </div>
-    </nav>
-
-    <aside class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+    <aside class="offcanvas-md offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="sidebarLabel">Chats</h5>
+        <h4 class="offcanvas-title" id="sidebarLabel">chats</h4>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <div class="border rounded p-2">
-          todo
-        </div>
+        <%= link_to "todo", root_path, class: "d-flex border rounded p-2 text-decoration-none" %>
       </div>
     </aside>
 
-    <main class="d-flex flex-column flex-grow-1">
-      <section class="p-2 d-flex flex-column">
-        <% 1.upto(20) do |index| %>
-          <% if index.odd?%>
-            <div class="border rounded p-3 m-3 w-50 align-self-end">
-              <%= "Question: #{index}" %>
-            </div>
-          <% else %>
-            <div class="border rounded p-3 m-3 w-50 align-self-start">
-              <%= "Answer: #{index}" %>
-            </div>
-          <% end %>
-        <% end %>
-      </section>
-
-      <div class="bg-body border-top sticky-bottom">
-        <div class="d-flex flex-column">
-          <input
-            class="border p-4 m-4 rounded"
-            placeholder="Type a message (Shift+Enter to add a newline)">
-          </input>
+    <div class="d-flex">
+      <!-- TODO: replace inline style with classes -->
+      <aside class="sticky-top vh-100 px-2 py-4 d-flex d-none d-sm-none d-md-block border" style="width: max(20%, 256px);">
+        <div class="flex flex-column">
+          <h4 class="" id="sidebarLabel">chats</h4>
+          <%= link_to "todo", root_path, class: "d-flex border rounded p-2 text-decoration-none" %>
         </div>
-      </div>
-    </main>
+      </aside>
+
+      <main class="d-flex flex-column flex-grow-1">
+        <nav class="border-bottom px-2 py-4 sticky-top bg-body d-flex justify-content-between">
+          <div class="w-100 d-flex justify-content-between gap-4">
+            <button class="d-md-none btn border rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
+              <%= image_tag "list.svg", class: "w-100 h-100" %>
+            </button>
+
+            <div class="w-100 d-flex justify-content-start">
+              <h1>title</h1>
+            </div>
+          </div>
+        </nav>
+
+        <section class="p-2 d-flex flex-column">
+          <% 1.upto(20) do |index| %>
+            <% if index.odd?%>
+              <div class="border rounded p-3 m-3 w-50 align-self-end">
+                <%= "Question: #{index}" %>
+              </div>
+            <% else %>
+              <div class="border rounded p-3 m-3 w-50 align-self-start">
+                <%= "Answer: #{index}" %>
+              </div>
+            <% end %>
+          <% end %>
+        </section>
+
+        <div class="bg-body border-top sticky-bottom">
+          <div class="d-flex flex-column">
+            <input
+              class="border p-4 m-4 rounded"
+              placeholder="Type a message (Shift+Enter to add a newline)">
+            </input>
+          </div>
+        </div>
+      </main>
+    </div>
   </body>
 </html>
