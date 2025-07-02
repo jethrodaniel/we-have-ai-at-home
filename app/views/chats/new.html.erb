@@ -1,11 +1,15 @@
 <% content_for :title, "New chat" %>
 
-<h1>New chat</h1>
+<% content_for :content do %>
+  <div class="text-center">Send a message to start</div>
 
-<%= render "form", chat: @chat %>
+  <div class="border rounded p-3 m-3 w-50 align-self-center text-secondary">
+    <div class="fw-bold">Server info</div>
+    <div class="d-flex gap-1">
+      <div class="fw-bold">Model:</div>
+      <%= Current.model %>
+    </div>
+  </div>
+<% end %>
 
-<br>
-
-<div>
-  <%= link_to "Back to chats", chats_path %>
-</div>
+<%= render "chats/page" %>
