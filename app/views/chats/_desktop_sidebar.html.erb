@@ -1,0 +1,17 @@
+<!-- TODO: replace inline style with classes -->
+<aside class="bg-body-tertiary sticky-top vh-100 px-4 py-4 d-flex d-none d-sm-none d-md-block border" style="width: max(20%, 240px);">
+  <div class="flex flex-column">
+    <h2 class="fs-4 px-4 py-2" id="sidebarLabel">chats</h2>
+    <%= link_to root_path, class: "d-flex gap-4 border rounded p-2 text-decoration-none" do %>
+      <%= image_tag "pencil-square.svg", class: "" %>
+      New chat
+    <% end %>
+  </div>
+
+  <div class="flex flex-column mt-4">
+    <h3 class="fs-5">Previous chats</h3>
+    <div class="flex flex-column">
+      <%= link_to "todo", root_path, class: "d-flex border rounded p-2 text-decoration-none" %>
+    </div>
+  </div>
+</aside>

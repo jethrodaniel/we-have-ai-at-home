@@ -1,0 +1,19 @@
+<aside class="bg-body-tertiary offcanvas-md offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebarLabel">
+  <div class="offcanvas-header">
+    <h2 class="fs-4 px-4 py-2 offcanvas-title" id="sidebarLabel">chats</h2>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <%= link_to new_chat_path, class: "d-flex gap-4 border rounded p-2 text-decoration-none" do %>
+      <%= image_tag "pencil-square.svg", class: "" %>
+      New chat
+    <% end %>
+
+    <div class="flex flex-column mt-4">
+      <h3 class="fs-5">Previous chats</h3>
+      <div class="flex flex-column">
+        <%= link_to "todo", root_path, class: "d-flex border rounded p-2 text-decoration-none" %>
+      </div>
+    </div>
+  </div>
+</aside>
