@@ -34,6 +34,9 @@ FileUtils.chdir APP_ROOT do
 
   ERROR
 
+  puts "\n== Downloading the model =="
+  system! "llama-cli -hf ggml-org/Qwen3-1.7B-GGUF -p 'hello' -n 1 --no-conversation"
+
   # Install JavaScript dependencies
   system("yarn install --check-files")
 
