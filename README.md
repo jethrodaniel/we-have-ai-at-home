@@ -1,6 +1,6 @@
 # we have AI at home
 
-A local AI chatbot web app.
+An AI chatbot web app.
 
 ## tech stack
 
@@ -14,7 +14,7 @@ Web app:
 LLM integration:
 
 - OpenAI-compatible API server: [llama.cpp](https://github.com/ggml-org/llama.cpp)
-- Models: TODO
+- Currently using [Qwen3-1.7B](https://huggingface.co/ggml-org/Qwen3-1.7B-GGUF)
 
 ## prerequisites
 
