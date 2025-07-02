@@ -1,6 +1,8 @@
 # we have AI at home
 
-An AI chatbot web app.
+A self-hosted AI chatbot web app.
+
+It works offline, thanks to [llama.cpp](https://github.com/ggml-org/llama.cpp).
 
 ## tech stack
 
@@ -46,4 +48,4 @@ Then visit http://localhost:3000 in your browser.
 
 ## license
 
-TODO
+MIT
