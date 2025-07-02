@@ -11,12 +11,13 @@
         <%= yield :content %>
       </section>
 
-      <div class="bg-body border-top sticky-bottom">
+      <div class="bg-body border-top sticky-bottom mb-4">
         <%= form_with model: @chat,
           class: "d-flex p-2 m-2" do |form| %>
 
           <%= form.search_field :message,
             class: "border rounded-start p-4 w-100",
+            required: true,
             placeholder: "Type a message (Shift+Enter to add a newline)" %>
 
           <%= button_tag type: :submit,
@@ -24,8 +25,10 @@
             class: "p-2 border-0 border-top border-bottom border-end rounded-end" do %>
             <%= image_tag "arrow-up-circle.svg", class: "m-2" %>
           <% end %>
-
         <% end %>
+
+        <!-- spacer -->
+        <div class="my-4"></div>
       </div>
     </main>
   </div>
