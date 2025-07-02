@@ -1,10 +1,5 @@
-<!-- TODO: use dom_id instead -->
 <div id="flash" class="container p-2 gap-4 text-center fixed-top" style="width: fit-content;">
-  <% if flash[:notice] %>
-    <%= render "layouts/flash_message", type: :notice, message: flash[:notice] %>
-  <% end %>
-
-  <% if flash[:alert] %>
-    <%= render "layouts/flash_message", type: :alert, message: flash[:alert] %>
+  <% flash.each do |type, message| %>
+    <%= render "layouts/flash_message", type:, message: %>
   <% end %>
 </div>
