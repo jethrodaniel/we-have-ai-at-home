@@ -1,0 +1,24 @@
+<!-- TODO: reduce duplication -->
+<% if type == :notice %>
+  <div
+    data-controller="auto-remove"
+    data-auto-remove-delay-value="5000"
+    class="alert alert-success alert-dismissible fade show"
+    role="alert">
+
+    <%= image_tag "check-circle.svg", class: "float-start mt-1 mx-2" %>
+    <%= message  %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% elsif type == :alert %>
+  <div
+    data-controller="auto-remove"
+    data-auto-remove-delay-value="5000"
+    class="alert alert-danger alert-dismissible fade show"
+    role="alert">
+
+    <%= image_tag "exclamation-circle.svg", class: "float-start mt-1 mx-2" %>
+    <%= message %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>

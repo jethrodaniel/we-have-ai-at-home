@@ -1,17 +1,10 @@
-<div class="container p-2 gap-4 text-center">
+<!-- TODO: use dom_id instead -->
+<div id="flash" class="container p-2 gap-4 text-center fixed-top" style="width: fit-content;">
   <% if flash[:notice] %>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <%= image_tag "check-circle.svg", class: "float-start mt-1" %>
-      <%= flash[:notice] %>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+    <%= render "layouts/flash_message", type: :notice, message: flash[:notice] %>
   <% end %>
 
   <% if flash[:alert] %>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      <%= image_tag "exclamation-circle.svg", class: "float-start mt-1" %>
-      <%= flash[:alert] %>
-      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
+    <%= render "layouts/flash_message", type: :alert, message: flash[:alert] %>
   <% end %>
 </div>
