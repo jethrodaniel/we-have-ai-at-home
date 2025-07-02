@@ -12,4 +12,10 @@ module ApplicationHelper
     in "alert" then "exclamation-circle.svg"
     end
   end
+
+  def load_models_if_needed
+    RubyLLM.models.find(Current.model)
+  rescue RubyLLM::ModelNotFoundError
+    RubyLLM.models.refresh!
+  end
 end

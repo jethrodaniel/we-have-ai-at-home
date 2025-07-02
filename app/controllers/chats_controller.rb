@@ -1,4 +1,5 @@
 class ChatsController < ApplicationController
+  before_action -> { helpers.load_models_if_needed }
   before_action :set_chat, only: %i[show]
 
   def show
