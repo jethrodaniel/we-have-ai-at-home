@@ -7,24 +7,7 @@
     <%= render "chats/desktop_sidebar" %>
 
     <main class="d-flex flex-column flex-grow-1">
-      <nav class="border-bottom px-2 py-4 sticky-top bg-body d-flex justify-content-between">
-        <div class="w-100 d-flex justify-content-between align-items-center gap-4">
-          <button class="d-md-none btn border rounded" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebar" aria-controls="sidebar">
-            <%= image_tag "list.svg", class: "w-100 h-100" %>
-          </button>
-
-          <div class="flex-grow-1 d-flex justify-content-start">
-            <h1 class="px-2">title</h1>
-          </div>
-
-          <%= button_to session_path,
-            method: :delete,
-            data: { turbo_confirm: "Sign out?" },
-            class: "btn border rounded" do %>
-            Log out
-          <% end %>
-        </div>
-      </nav>
+      <%= render "chats/navbar" %>
 
       <section class="p-2 d-flex flex-column flex-grow-1">
         <% if Current.user.chats.count.zero? %>
