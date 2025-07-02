@@ -1,0 +1,4 @@
+<!-- clear out the message input -->
+<%= turbo_stream.replace dom_id(@chat, :search) do %>
+  <%= render "chats/show_search" %>
+<% end %>

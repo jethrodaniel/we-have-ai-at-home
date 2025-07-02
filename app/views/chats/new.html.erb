@@ -12,4 +12,19 @@
   </div>
 <% end %>
 
+<% content_for :input do %>
+  <%= form_with url: @chat, class: "d-flex p-2 m-2" do |form| %>
+    <%= form.search_field :system_prompt,
+      autofocus: true,
+      class: "border rounded-start p-4 w-100",
+      placeholder: "System prompt (leave blank for default)" %>
+
+    <%= button_tag type: :submit,
+      name: nil,
+      class: "p-2 border-0 border-top border-bottom border-end rounded-end" do %>
+      <%= image_tag "arrow-up-circle.svg", class: "m-2" %>
+    <% end %>
+  <% end %>
+<% end %>
+
 <%= render "chats/page" %>

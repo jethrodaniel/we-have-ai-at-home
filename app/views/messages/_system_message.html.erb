@@ -1,0 +1,9 @@
+<div class="border rounded p-2 m-2 align-self-center w-100 text-center">
+  <span class="fw-semibold text-secondary">
+    Prompt:
+  </span>
+
+  <%= tag.span id: dom_id(message, "content"), class: "fst-italic" do %>
+    <%= h(message.content) %>
+  <% end %>
+</div>

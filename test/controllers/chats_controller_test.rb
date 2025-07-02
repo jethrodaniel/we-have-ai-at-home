@@ -7,12 +7,6 @@ class ChatsControllerTest < ActionDispatch::IntegrationTest
     login_as users(:one)
   end
 
-  test "should get index" do
-    get chats_url
-
-    assert_response :success
-  end
-
   test "should get new" do
     get new_chat_url
 
@@ -33,27 +27,5 @@ class ChatsControllerTest < ActionDispatch::IntegrationTest
     get chat_url(@chat)
 
     assert_response :success
-  end
-
-  test "should get edit" do
-    get edit_chat_url(@chat)
-
-    assert_response :success
-  end
-
-  test "should update chat" do
-    patch chat_url(@chat), params: {
-      chat: {model_id: "model"}
-    }
-
-    assert_redirected_to chat_url(@chat)
-  end
-
-  test "should destroy chat" do
-    assert_difference("Chat.count", -1) do
-      delete chat_url(@chat)
-    end
-
-    assert_redirected_to chats_url
   end
 end

@@ -1,0 +1,16 @@
+<%= form_with url: chat_messages_path(@chat),
+  id: dom_id(@chat, :search),
+  method: :post,
+  class: "d-flex p-2 m-2" do |form| %>
+
+  <%= form.search_field :content,
+    autofocus: true,
+    class: "border rounded-start p-3 w-100",
+    placeholder: "Type a message (Shift+Enter to add a newline)" %>
+
+  <%= button_tag type: :submit,
+    name: nil,
+    class: "p-2 border-0 border-top border-bottom border-end rounded-end" do %>
+    <%= image_tag "arrow-up-circle.svg", class: "m-2" %>
+  <% end %>
+<% end %>

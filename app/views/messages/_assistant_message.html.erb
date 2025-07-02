@@ -1,0 +1,14 @@
+<div class="p-2 m-2 align-self-start" style="min-width: min(60%, 500px);">
+  <%= tag.div id: dom_id(message, "content") do %>
+    <% if message.content.present? %>
+      <%= simple_format h(message.content) %>
+    <% else %>
+      <div class="d-flex align-items-center gap-2">
+        <div class="spinner-border spinner-border-sm text-body-secondary" role="status">
+        </div>
+
+        Thinking...
+      </div>
+    <% end %>
+  <% end %>
+</div>

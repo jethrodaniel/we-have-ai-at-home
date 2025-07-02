@@ -1,0 +1,5 @@
+<div class="border rounded p-2 m-2 align-self-end" style="min-width: min(30%, 200px);">
+  <%= tag.div id: dom_id(message, "content") do %>
+    <%= h(message.content) %>
+  <% end %>
+</div>

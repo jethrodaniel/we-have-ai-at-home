@@ -4,3 +4,7 @@ RubyLLM.configure do |config|
   config.logger = Rails.logger
   config.log_level = :debug if Rails.env.development?
 end
+
+Rails.application.config.before_initialize do
+  RubyLLM.models.refresh!
+end

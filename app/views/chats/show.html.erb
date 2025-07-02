@@ -1,17 +1,15 @@
 <% content_for :title, "Existing Chat" %>
 
+<%= turbo_stream_from [@chat, "messages"] %>
+
 <% content_for :content do %>
-  <% 1.upto(20) do |index| %>
-    <% if index.odd?%>
-      <div class="border rounded p-3 m-3 w-50 align-self-end">
-        <%= "Question: #{index}" %>
-      </div>
-    <% else %>
-      <div class="border rounded p-3 m-3 w-50 align-self-start">
-        <%= "Answer: #{index}" %>
-      </div>
-    <% end %>
+  <%= tag.div id: Message.model_name.plural do %>
+    <%= render @chat.messages %>
   <% end %>
+<% end %>
+
+<% content_for :input do %>
+  <%= render "chats/show_search" %>
 <% end %>
 
 <%= render "chats/page" %>

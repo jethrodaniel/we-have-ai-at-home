@@ -1,0 +1,11 @@
+<%= tag.div id: dom_id(message),
+  data: { controller: "scroll-into-view" },
+  class: "d-flex flex-column" do %>
+  <% if message.role == "user" %>
+    <%= render "messages/user_message", message: %>
+  <% elsif message.role == "system" %>
+    <%= render("messages/system_message", message:) if message.content.present? %>
+  <% else %>
+    <%= render "messages/assistant_message", message: %>
+  <% end %>
+<% end %>
